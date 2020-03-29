@@ -1,7 +1,9 @@
 package com.autoauto.maintenancetracker;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
+import android.content.Intent;
 
 public class AboutVehicleActivity extends AutoAutoActivity {
     TextView tvCarName;
@@ -17,5 +19,10 @@ public class AboutVehicleActivity extends AutoAutoActivity {
             String[] carArray = application.getMyGarage().getCarsArray();
             tvCarName.setText(carArray[index]);
         }
+    }
+
+    public void onButtonClick(View view) {
+        Intent myIntent = new Intent(getBaseContext(),EditVehActivity.class);
+        startActivity(myIntent);
     }
 }
